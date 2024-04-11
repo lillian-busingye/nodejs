@@ -1,0 +1,21 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Registration Form
+  link(rel='stylesheet' href='/css/register.css')
+.container
+  h2 Registration Form
+  form#registrationForm
+    .form-group
+      label(for='fullName') Full Name:
+      input#fullName(type='text' name='fullName')
+    .form-group
+      label(for='email') Email:
+      input#email(type='email' name='email')
+    //- .form-group
+    //-   label(for='password') Password:
+    //-   input#password(type='password' name='password' required='')
+    button(type='submit') Register
+  #message
+script(src='/js/register.js')

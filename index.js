@@ -7,6 +7,8 @@ const path = require('path');
 
 require('dotenv').config();
 
+// const registerRoute = require('./routes/registerRoutes')
+
 //Instatiations
 const app = express();
 
@@ -29,16 +31,16 @@ mongoose.connection
  app.set('views', path.join(__dirname, 'views')) //specifying the directory where the views are found
 
 
-
-
 //middleware
+app.use(express.static(path.join(__dirname, 'public'))) //set directory for static files
+
 app.use(express.urlencoded({extended:true}))
 // routes
-app.get('/loginform', (req, res) => {
-  res.render('login_form')
+app.get('/register', (req, res) => {
+  res.render('register')
 })
 
-
+// app.use('/', registerRoutes);
 
 //This is a route (req is request and res is response )
 // app.get('/', (req, res) => {
